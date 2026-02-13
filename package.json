@@ -1,0 +1,19 @@
+{
+  "name": "valyuta-kalkulyatori",
+  "version": "1.0.0",
+  "description": "Offline valyuta kalkulyatori - Dollar va So'm konvertatsiya",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx live-server",
+    "start": "npx live-server"
+  },
+  "keywords": [
+    "valyuta",
+    "kalkulyator",
+    "dollar",
+    "som",
+    "uzbekistan"
+  ],
+  "author": "",
+  "license": "MIT"
+}

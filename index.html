@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valyuta Kalkulyatori</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💱 Valyuta Kalkulyatori</h1>
+            <div class="live-rate">
+                <span class="rate-label">Joriy kurs:</span>
+                <span class="rate-value" id="currentRate">12500</span>
+                <span class="rate-currency">so'm</span>
+                <span class="rate-change" id="rateChange">+0.00%</span>
+            </div>
+        </div>
+
+        <div class="calculator-box">
+            <div class="currency-section">
+                <label>
+                    <input type="radio" name="direction" value="usd-to-uzs" checked>
+                    <span class="currency-option">
+                        <span class="flag">🇺🇸</span>
+                        <span>Dollar → So'm</span>
+                    </span>
+                </label>
+                <label>
+                    <input type="radio" name="direction" value="uzs-to-usd">
+                    <span class="currency-option">
+                        <span class="flag">🇺🇿</span>
+                        <span>So'm → Dollar</span>
+                    </span>
+                </label>
+            </div>
+
+            <div class="input-group">
+                <input type="number" id="amount" placeholder="Miqdorni kiriting" step="0.01" min="0">
+                <button id="calculateBtn">Hisoblash</button>
+            </div>
+
+            <div class="result" id="result">
+                <div class="result-text">Natija bu yerda ko'rinadi</div>
+            </div>
+        </div>
+
+        <div class="coins-container" id="coinsContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

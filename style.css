@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.header h1 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.live-rate {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 12px 25px;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+.rate-label {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+.rate-value {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin: 0 8px;
+}
+
+.rate-change {
+    font-size: 0.85em;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-left: 8px;
+}
+
+.rate-change.positive {
+    color: #4ade80;
+}
+
+.rate-change.negative {
+    color: #f87171;
+}
+
+.calculator-box {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.currency-section {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.currency-section label {
+    flex: 1;
+    cursor: pointer;
+}
+
+.currency-section input[type="radio"] {
+    display: none;
+}
+
+.currency-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+.currency-section input[type="radio"]:checked + .currency-option {
+    border-color: #3b82f6;
+    background: #eff6ff;
+}
+
+.flag {
+    font-size: 1.6em;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#amount {
+    flex: 1;
+    padding: 14px 18px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 1.05em;
+    transition: all 0.3s ease;
+}
+
+#amount:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+#calculateBtn {
+    padding: 14px 28px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.05em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#calculateBtn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+#calculateBtn:active {
+    transform: translateY(0);
+}
+
+.result {
+    background: #f0fdf4;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #86efac;
+}
+
+.result-text {
+    font-size: 1.25em;
+    color: #166534;
+    font-weight: 600;
+}
+
+.coins-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.coin {
+    position: absolute;
+    font-size: 2em;
+    animation: fall linear;
+    opacity: 0.7;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 1.8em;
+    }
+    
+    .calculator-box {
+        padding: 25px;
+    }
+    
+    .currency-section {
+        flex-direction: column;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+}
